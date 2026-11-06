@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الشروق للتصدير | El Shorouk For Export</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #1b4332;
+            --accent-gold: #d4af37;
+            --dark-navy: #0a192f;
+            --light-bg: #f8f9fa;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Cairo', 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .top-info span {
+            margin-left: 15px;
+        }
+        [dir="ltr"] .top-info span {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+
+        .lang-btn {
+            background: var(--accent-gold);
+            color: var(--dark-navy);
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(27, 67, 50, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 110px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 850px;
+            margin: 0 auto 25px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--dark-navy);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .stats-bar {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 30px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+        }
+
+        .features {
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .products {
+            background-color: #fff;
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: var(--white);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .contact {
+            padding: 60px 5%;
+            background: var(--dark-navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: #050c1a;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-user"></i> <span id="mgr-name">أ. يوسف جبل</span></span>
+            <span><i class="fas fa-map-marker-alt"></i> <span id="loc">دمياط - مصر</span></span>
+        </div>
+        <button class="lang-btn" onclick="toggleLanguage()">English</button>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <i class="fas fa-seedling"></i>
+            <span id="brand-name">شركة الشروق للتصدير</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" id="nav-about">عن الشركة</a></li>
+            <li><a href="#features" id="nav-features">مميزاتنا</a></li>
+            <li><a href="#products" id="nav-products">منتجاتنا</a></li>
+            <li><a href="#contact" id="nav-contact">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="badge-container">
+            <span class="badge" id="b1"><i class="fas fa-award"></i> مطابق لمواصفات الاتحاد الأوروبي</span>
+            <span class="badge" id="b2"><i class="fas fa-shipping-fast"></i> التصدير للخليج وأوروبا</span>
+        </div>
+        <h1 id="hero-title">جودة مصرية بمواصفات عالمية</h1>
+        <p id="hero-desc">المورد الموثوق للحاصلات الزراعية الفاخرة المجهزة والمفرزة بأحدث التقنيات للتصدير المباشر إلى الأسواق الأوروبية والعربية منذ <span dir="ltr" style="display: inline-block;">2015</span>.</p>
+        <a href="https://wa.me/201035136480" class="cta-btn" id="hero-btn"><i class="fab fa-whatsapp"></i> طلب عرض سعر سريع</a>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h2>+10</h2>
+            <p id="st1">سنوات خبرة</p>
+        </div>
+        <div class="stat-item">
+            <h2>100%</h2>
+            <p id="st2">جودة مفحوصة</p>
+        </div>
+        <div class="stat-item">
+            <h2>+15</h2>
+            <p id="st3">دولة حول العالم</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3 id="f1-title">معايير أوربية (EU Standard)</h3>
+            <p id="f1-desc">فرز وتعبئة آلي وفق أعلى اشتراطات سلامة الغذاء العالمية.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-temperature-low"></i>
+            <h3 id="f2-title">سلسلة تبريد حديثة</h3>
+            <p id="f2-desc">الحفاظ على نضارة المحاصيل من المزرعة حتى شحن الحاويات.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-handshake"></i>
+            <h3 id="f3-title">أسعار تنافسية</h3>
+            <p id="f3-desc">عقود توريد مرنة وشراكات مستدامة طويلة الأمد.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-file-contract"></i>
+            <h3 id="f4-title">وثائق تصدير متكاملة</h3>
+            <p id="f4-desc">تسهيلات جمركية وشهادات صحية وزراعية معتمدة.</p>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title" id="prod-title">منتجاتنا المخصصة للتصدير</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=500&q=80" alt="Citrus">
+                <div class="product-info">
+                    <h3 id="p1-title">الموالح والبرتقال (فالنسيا وأبو صرة)</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1534531141161-e4160799cfa7?auto=format&fit=crop&w=500&q=80" alt="Lemon">
+                <div class="product-info">
+                    <h3 id="p2-title">الليمون الأضاليا والشعيري</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&w=500&q=80" alt="Dates">
+                <div class="product-info">
+                    <h3 id="p3-title">التمور الفاخرة (مجدول وسيوي)</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&w=500&q=80" alt="Vegetables">
+                <div class="product-info">
+                    <h3 id="p4-title">الخضروات الطازجة (بصل ومحاصيل)</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 id="contact-title">تواصل مع قسم التصدير</h2>
+        <p id="contact-sub">جاهزون لتلقي طلباتكم وتوفير عينات المنتجات فوراً</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-user"></i>
+                <span id="c-mgr">Mr. Youssef Gabal</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span dir="ltr">+20 103 513 6480</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span dir="ltr">yaussefgabl@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <span>www.elshorouk-export.com</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 شركة الشروق للتصدير (EL SHOROUK FOR EXPORT). جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        const data = {
+            ar: {
+                brand: "شركة الشروق للتصدير",
+                mgr: "أ. يوسف جبل",
+                loc: "دمياط - مصر",
+                b1: '<i class="fas fa-award"></i> مطابق لمواصفات الاتحاد الأوروبي',
+                b2: '<i class="fas fa-shipping-fast"></i> التصدير للخليج وأوروبا',
+                navAbout: "عن الشركة",
+                navFeatures: "مميزاتنا",
+                navProducts: "منتجاتنا",
+                navContact: "تواصل معنا",
+                heroTitle: "جودة مصرية بمواصفات عالمية",
+                heroDesc: 'المورد الموثوق للحاصلات الزراعية الفاخرة المجهزة والمفرزة بأحدث التقنيات للتصدير المباشر إلى الأسواق الأوروبية والعربية منذ <span dir="ltr" style="display: inline-block;">2015</span>.',
+                heroBtn: "طلب عرض سعر سريع",
+                st1: "سنوات خبرة",
+                st2: "جودة مفحوصة",
+                st3: "دولة حول العالم",
+                f1Title: "معايير أوربية (EU Standard)",
+                f1Desc: "فرز وتعبئة آلي وفق أعلى اشتراطات سلامة الغذاء العالمية.",
+                f2Title: "سلسلة تبريد حديثة",
+                f2Desc: "الحفاظ على نضارة المحاصيل من المزرعة حتى شحن الحاويات.",
+                f3Title: "أسعار تنافسية",
+                f3Desc: "عقود توريد مرنة وشراكات مستدامة طويلة الأمد.",
+                f4Title: "وثائق تصدير متكاملة",
+                f4Desc: "تسهيلات جمركية وشهادات صحية وزراعية معتمدة.",
+                prodTitle: "منتجاتنا المخصصة للتصدير",
+                p1Title: "الموالح والبرتقال (فالنسيا وأبو صرة)",
+                p2Title: "الليمون الأضاليا والشعيري",
+                p3Title: "التمور الفاخرة (مجدول وسيوي)",
+                p4Title: "الخضروات الطازجة (بصل ومحاصيل)",
+                contactTitle: "تواصل مع قسم التصدير",
+                contactSub: "جاهزون لتلقي طلباتكم وتوفير عينات المنتجات فوراً",
+                langBtn: "English"
+            },
+            en: {
+                brand: "EL SHOROUK FOR EXPORT",
+                mgr: "Mr. Youssef Gabal",
+                loc: "Damietta, Egypt",
+                b1: '<i class="fas fa-award"></i> EU Standard Compliant',
+                b2: '<i class="fas fa-shipping-fast"></i> Exporting to EU & Gulf',
+                navAbout: "About Us",
+                navFeatures: "Features",
+                navProducts: "Products",
+                navContact: "Contact Us",
+                heroTitle: "Premium Egyptian Fresh Produce",
+                heroDesc: 'Your Trusted Partner for Fresh, Sorted & Certified Egyptian Produce Exported Directly to Europe and Gulf Markets Since <span dir="ltr" style="display: inline-block;">2015</span>.',
+                heroBtn: "Request a Quick Quote",
+                st1: "Years Experience",
+                st2: "Inspected Quality",
+                st3: "Global Destinations",
+                f1Title: "EU Standard Quality",
+                f1Desc: "Automated sorting and packaging under global food safety rules.",
+                f2Title: "Modern Cold Chain",
+                f2Desc: "Maintaining peak freshness from farm to final destination.",
+                f3Title: "Competitive Pricing",
+                f3Desc: "Flexible contracts tailored for long-term international partners.",
+                f4Title: "Full Export Documentation",
+                f4Desc: "Complete customs clearance, Phytosanitary & ISO certification.",
+                prodTitle: "Export Grade Products",
+                p1Title: "Oranges & Citrus (Valencia & Navel)",
+                p2Title: "Fresh Lemons (Adalia & Eureka)",
+                p3Title: "Premium Dates (Medjool & Siwi)",
+                p4Title: "Fresh Vegetables (Onions & Produce)",
+                contactTitle: "Contact Export Department",
+                contactSub: "Ready to fulfill orders & supply product samples globally",
+                langBtn: "عربي"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+
+            const t = data[currentLang];
+            document.getElementById('brand-name').innerText = t.brand;
+            document.getElementById('mgr-name').innerText = t.mgr;
+            document.getElementById('loc').innerText = t.loc;
+            document.getElementById('b1').innerHTML = t.b1;
+            document.getElementById('b2').innerHTML = t.b2;
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('nav-features').innerText = t.navFeatures;
+            document.getElementById('nav-products').innerText = t.navProducts;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-desc').innerHTML = t.heroDesc;
+            document.getElementById('hero-btn').innerHTML = `<i class="fab fa-whatsapp"></i> ${t.heroBtn}`;
+            document.getElementById('st1').innerText = t.st1;
+            document.getElementById('st2').innerText = t.st2;
+            document.getElementById('st3').innerText = t.st3;
+            document.getElementById('f1-title').innerText = t.f1Title;
+            document.getElementById('f1-desc').innerText = t.f1Desc;
+            document.getElementById('f2-title').innerText = t.f2Title;
+            document.getElementById('f2-desc').innerText = t.f2Desc;
+            document.getElementById('f3-title').innerText = t.f3Title;
+            document.getElementById('f3-desc').innerText = t.f3Desc;
+            document.getElementById('f4-title').innerText = t.f4Title;
+            document.getElementById('f4-desc').innerText = t.f4Desc;
+            document.getElementById('prod-title').innerText = t.prodTitle;
+            document.getElementById('p1-title').innerText = t.p1Title;
+            document.getElementById('p2-title').innerText = t.p2Title;
+            document.getElementById('p3-title').innerText = t.p3Title;
+            document.getElementById('p4-title').innerText = t.p4Title;
+            document.getElementById('contact-title').innerText = t.contactTitle;
+            document.getElementById('contact-sub').innerText = t.contactSub;
+            document.querySelector('.lang-btn').innerText = t.langBtn;
+        }
+    </script>
+</body>
+</html>
